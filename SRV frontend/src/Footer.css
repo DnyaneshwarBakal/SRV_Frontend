@@ -1,0 +1,102 @@
+/* Main Footer Area */
+.footer-container {
+    background-color: #1a154d; /* Dark navy/indigo */
+    color: white;
+    padding: 60px 20px 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Common Section Styling */
+.footer-section {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Icon Box Styling */
+.icon-box {
+    background-color: #d1c4e9; /* Light lavender */
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a154d;
+}
+
+/* Text Content */
+.footer-info h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.footer-info p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #e0e0e0;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icon-box {
+    background-color: #d1c4e9;
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a154d;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.social-icon-box:hover {
+    opacity: 0.8;
+}
+
+/* Copyright Bar */
+.footer-bottom {
+    background-color: white;
+    color: #1a154d;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Responsive Logic */
+@media (max-width: 1024px) {
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .footer-section {
+        flex-basis: 100%;
+    }
+}

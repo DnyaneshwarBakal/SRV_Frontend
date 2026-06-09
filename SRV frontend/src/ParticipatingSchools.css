@@ -1,0 +1,98 @@
+/* --- Section Container --- */
+.schools-container {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.schools-max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Heading --- */
+.schools-title {
+    text-align: center;
+    color: #1e1b4b; /* Deep Navy Blue */
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 48px;
+}
+
+/* --- Grid Layout --- */
+.schools-grid {
+    display: grid;
+    /* Mobile: 2 columns */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* --- Card Style --- */
+.school-card {
+    background-color: #ffffff;
+    border: 1px solid #f3f4f6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 3 / 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.school-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #e5e7eb;
+    transform: translateY(-4px);
+}
+
+/* --- Logo Styling --- */
+.logo-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.school-logo {
+    max-width: 100%;
+    max-height: 70px; /* Adjusted for better visibility */
+    object-fit: contain;
+    /* Removed the heavy grayscale filter to ensure placeholder text is visible */
+    transition: transform 0.3s ease;
+}
+
+.school-card:hover .school-logo {
+    transform: scale(1.05);
+}
+
+/* --- School Name Text --- */
+.school-name {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #4b5563; /* Darker gray for better readability */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin: 0;
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablet: 3 columns */
+@media (min-width: 768px) {
+    .schools-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop: 6 columns */
+@media (min-width: 1024px) {
+    .schools-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}

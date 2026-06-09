@@ -1,0 +1,83 @@
+.hero-section {
+    display: flex;
+    min-height: 500px;
+    background-color: #E9DBFF; /* Light Lavender */
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    z-index: 2;
+    background: linear-gradient(90deg, #E9DBFF 80%, transparent 100%);
+}
+
+.hero-subtitle {
+    color: #8B5CF6;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    color: #1e1b4b;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    max-width: 500px;
+}
+
+.hero-tagline {
+    color: #8B5CF6;
+    font-size: 1.5rem;
+    margin: 15px 0 30px 0;
+}
+
+.pre-schedule-btn {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    background: transparent;
+    border: 1px solid #1e1b4b;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.btn-icon {
+    background-color: #11112b;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-text {
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #1e1b4b;
+    letter-spacing: 1px;
+}
+
+.hero-image-container {
+    flex: 1.2;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .hero-section { flex-direction: column; }
+    .hero-content { background: #E9DBFF; padding: 40px; }
+    .hero-title { font-size: 2.5rem; }
+}
