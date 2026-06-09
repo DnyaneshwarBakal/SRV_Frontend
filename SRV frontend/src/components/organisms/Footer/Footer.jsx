@@ -1,4 +1,9 @@
 import React from 'react';
+import LocationOn from '@mui/icons-material/LocationOn';
+import Phone from '@mui/icons-material/Phone';
+import Instagram from '@mui/icons-material/Instagram';
+import Facebook from '@mui/icons-material/Facebook';
+import YouTube from '@mui/icons-material/YouTube';
 import './Footer.css';
 
 const Footer = () => {
@@ -17,7 +22,9 @@ const Footer = () => {
 
           {/* Corporate Office */}
           <div className="footer-section">
-            <div className="icon-box">📍</div>
+            <div className="icon-box">
+              <LocationOn fontSize="small" />
+            </div>
             <div className="footer-info">
               <h4>Corporate Office:</h4>
               <p>Suite B-5, Ballygunge Park Tower,</p>
@@ -28,7 +35,9 @@ const Footer = () => {
 
           {/* Ahmedabad Office */}
           <div className="footer-section">
-            <div className="icon-box">📍</div>
+            <div className="icon-box">
+              <LocationOn fontSize="small" />
+            </div>
             <div className="footer-info">
               <h4>Ahmedabad Office:</h4>
               <p>12/AA, Swastik Chambers, Near CU</p>
@@ -39,7 +48,9 @@ const Footer = () => {
 
           {/* Call Us Section */}
           <div className="footer-section">
-            <div className="icon-box">📞</div>
+            <div className="icon-box">
+              <Phone fontSize="small" />
+            </div>
             <div className="footer-info">
               <h4>Call us on</h4>
               <p>9674805912</p>
@@ -51,9 +62,15 @@ const Footer = () => {
           <div className="footer-follow">
             <h4>Follow us on</h4>
             <div className="social-icons">
-              <div className="social-icon-box">📸</div>
-              <div className="social-icon-box">f</div>
-              <div className="social-icon-box">▶</div>
+              <div className="social-icon-box">
+                <Instagram fontSize="small" />
+              </div>
+              <div className="social-icon-box">
+                <Facebook fontSize="small" />
+              </div>
+              <div className="social-icon-box">
+                <YouTube fontSize="small" />
+              </div>
             </div>
           </div>
         </div>

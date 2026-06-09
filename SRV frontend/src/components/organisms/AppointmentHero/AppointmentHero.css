@@ -1,7 +1,7 @@
 .hero-section {
     display: flex;
     min-height: 500px;
-    background-color: #E9DBFF; /* Light Lavender */
+    background-color: #E9DBFF; /* Solid background color */
     overflow: hidden;
     position: relative;
 }
@@ -13,7 +13,8 @@
     justify-content: center;
     padding: 60px 80px;
     z-index: 2;
-    background: linear-gradient(90deg, #E9DBFF 80%, transparent 100%);
+    /* Removed the previous gradient from here to keep background consistent */
+    background-color: #E9DBFF; 
 }
 
 .hero-subtitle {
@@ -70,14 +71,34 @@
     position: relative;
 }
 
+/* --- THE SMOOTH TRANSITION FIX --- */
+.hero-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px; /* Slight overlap to ensure no tiny white line */
+    height: 100%;
+    width: 250px; /* Control the "smoothness" by increasing this number */
+    background: linear-gradient(to right, #E9DBFF 10%, transparent 100%);
+    z-index: 1;
+}
+
 .hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 @media (max-width: 1024px) {
     .hero-section { flex-direction: column; }
-    .hero-content { background: #E9DBFF; padding: 40px; }
+    .hero-content { padding: 40px; }
     .hero-title { font-size: 2.5rem; }
+    
+    /* Change blend direction for mobile stack */
+    .hero-image-container::before {
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(to bottom, #E9DBFF, transparent);
+    }
 }

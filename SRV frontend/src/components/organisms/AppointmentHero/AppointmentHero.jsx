@@ -1,4 +1,5 @@
 import React from 'react';
+import ArrowForward from '@mui/icons-material/ArrowForward';
 import './AppointmentHero.css';
 
 const AppointmentHero = () => {
@@ -11,15 +12,13 @@ const AppointmentHero = () => {
         
         <button className="pre-schedule-btn">
           <div className="btn-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
+            <ArrowForward fontSize="small" sx={{ color: 'white' }} />
           </div>
           <span className="btn-text">PRE-SCHEDULE NOW</span>
         </button>
       </div>
       <div className="hero-image-container">
+        {/* The fader effect is handled by CSS ::before here */}
         <img 
           src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1200" 
           alt="Exhibition event" 
