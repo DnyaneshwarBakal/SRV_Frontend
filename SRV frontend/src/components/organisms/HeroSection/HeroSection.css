@@ -3,30 +3,67 @@
     font-family: Arial, sans-serif;
 }
 
+/* Header Start State (White) */
+/* Base Logo Style */
+.hero-header__logo {
+    height: 50px;       /* Fixed height */
+    width: auto;         /* Keeps aspect ratio perfect */
+    max-width: 180px;    /* Prevents it from being too wide */
+    object-fit: contain; /* Ensures the image isn't stretched */
+    transition: all 0.4s ease; /* Smoothly scales when header shrinks */
+}
+
+/* Optional: Shrink logo slightly when header is scrolled */
+.hero-header--scrolled .hero-header__logo {
+    height: 40px; /* Makes the logo a bit smaller on scroll to match slim header */
+}
 .hero-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
     background: #fff;
+    position: fixed; /* Keeps it fixed at top */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* Stays above everything */
+    transition: all 0.4s ease; /* Smooth color transition */
+    box-sizing: border-box;
+}
+
+/* Header Scrolled State (Banner BG Color) */
+.hero-header--scrolled {
+    background: #1e1b4b; /* Change to banner color */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 10px 50px; /* Slightly slim down header on scroll */
 }
 
 .hero-header__register-btn {
     background: #1e1b4b;
     color: white;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid white; /* Added border to keep it visible on dark header */
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Change button style when header is scrolled */
+.hero-header--scrolled .hero-header__register-btn {
+    background: #ffcc00; /* Optional: change to yellow for better visibility on dark header */
+    color: #1e1b4b;
+    border: none;
 }
 
 /* --- Hero Section Layout --- */
 .hero {
     background-color: #1e1b4b;
     color: white;
-    padding: 60px 20px;
-    overflow: hidden; /* Important for the scrolling effect */
+    padding: 140px 20px 60px 20px; /* Added more top padding to clear the fixed header */
+    overflow: hidden;
 }
 
 .hero__container {
@@ -47,7 +84,7 @@
 }
 
 .hero__title span {
-    color: #ffcc00; /* Yellow highlight */
+    color: #ffcc00;
     display: block;
 }
 
@@ -72,12 +109,12 @@
     margin: 0 20px;
 }
 
-/* --- THE SCROLLING IMAGES (FIXED) --- */
+/* --- THE SCROLLING IMAGES --- */
 .hero__center {
     display: flex;
     gap: 15px;
-    height: 550px; /* REQUIRED: Images won't show without a container height */
-    overflow: hidden; /* REQUIRED: To hide images outside the hero area */
+    height: 660px;
+    overflow: hidden;
 }
 
 .hero__column {
@@ -85,56 +122,71 @@
     flex-direction: column;
     gap: 15px;
     flex: 1;
-    animation: scrollUp 20s linear infinite; /* This triggers the move UP */
+    animation: scrollUp 20s linear infinite;
 }
 
-/* Delay or different speed for the middle column */
 .hero__column--delay {
     animation-duration: 25s;
-    animation-direction: alternate-reverse; /* Optional: adds variety */
+    animation-direction: normal;
+}
+
+.hero__column:nth-child(1) {
+    animation-duration: 24s;
+}
+
+.hero__column:nth-child(2) {
+    animation-duration: 26s;
+}
+
+.hero__column:nth-child(3) {
+    animation-duration: 28s;
 }
 
 .hero__column img {
     width: 100%;
-    height: 250px; /* Fixed height for images */
+    min-height: 260px;
+    height: auto;
     object-fit: cover;
     border-radius: 12px;
     display: block;
 }
 
-/* THE SCROLL ANIMATION */
 @keyframes scrollUp {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        /* Since the list is duplicated, moving -50% creates an infinite loop */
-        transform: translateY(-50%);
-    }
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
 }
 
 /* --- Form Styling --- */
 .hero__form {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
     padding: 30px;
     border-radius: 15px;
-    color: #333;
+    color: #e6e6e6;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
 .hero__form h2 {
-    color: #1e1b4b;
+    color: #ffdd57;
     margin: 0 0 5px 0;
 }
 
 .hero__form input, .hero__form textarea {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 6px;
     width: 100%;
     box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.12);
+    color: #f2f2f2;
+}
+
+.hero__form input::placeholder,
+.hero__form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .hero__submit-btn {
@@ -147,8 +199,7 @@
     cursor: pointer;
 }
 
-/* Responsive Fix */
 @media (max-width: 992px) {
     .hero__container { grid-template-columns: 1fr; }
-    .hero__center { display: none; } /* Hide scrolling on smaller screens */
+    .hero__center { display: none; }
 }

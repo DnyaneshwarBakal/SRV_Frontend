@@ -1,9 +1,5 @@
 import React from 'react';
-import LocationOn from '@mui/icons-material/LocationOn';
-import Phone from '@mui/icons-material/Phone';
-import Instagram from '@mui/icons-material/Instagram';
-import Facebook from '@mui/icons-material/Facebook';
-import YouTube from '@mui/icons-material/YouTube';
+import { MapPin, Phone, Instagram, Facebook, Youtube } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -14,16 +10,16 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="footer-logo">
             <img 
-              src="/headerlogo.webp" 
+              src="https://placehold.co/150x80/007bff/white?text=Premier+Schools" 
               alt="Premier Schools Exhibition" 
-              className="footer-logo-img"
+              style={{ borderRadius: '8px' }}
             />
           </div>
 
           {/* Corporate Office */}
           <div className="footer-section">
             <div className="icon-box">
-              <LocationOn fontSize="small" />
+              <MapPin size={20} />
             </div>
             <div className="footer-info">
               <h4>Corporate Office:</h4>
@@ -36,7 +32,7 @@ const Footer = () => {
           {/* Ahmedabad Office */}
           <div className="footer-section">
             <div className="icon-box">
-              <LocationOn fontSize="small" />
+              <MapPin size={20} />
             </div>
             <div className="footer-info">
               <h4>Ahmedabad Office:</h4>
@@ -49,7 +45,7 @@ const Footer = () => {
           {/* Call Us Section */}
           <div className="footer-section">
             <div className="icon-box">
-              <Phone fontSize="small" />
+              <Phone size={20} />
             </div>
             <div className="footer-info">
               <h4>Call us on</h4>
@@ -63,13 +59,13 @@ const Footer = () => {
             <h4>Follow us on</h4>
             <div className="social-icons">
               <div className="social-icon-box">
-                <Instagram fontSize="small" />
+                <Instagram size={20} />
               </div>
               <div className="social-icon-box">
-                <Facebook fontSize="small" />
+                <Facebook size={20} />
               </div>
               <div className="social-icon-box">
-                <YouTube fontSize="small" />
+                <Youtube size={20} />
               </div>
             </div>
           </div>

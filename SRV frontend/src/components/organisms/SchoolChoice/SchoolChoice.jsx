@@ -25,7 +25,7 @@ const SchoolChoice = () => {
       id: 4,
       title: "International Curriculum Schools",
       desc: "Offering IB, Cambridge, Finnish and other global curricula with a global learning environment.",
-      image: "https://images.unsplash.com/photo-1523050335192-ce11558459e3?auto=format&fit=crop&q=80&w=500"
+      image: "https://images.pexels.com/photos/4143791/pexels-photo-4143791.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
     }
   ];
 
